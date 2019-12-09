@@ -24,7 +24,7 @@ def index():
 @app.route('/guncelle/<id>')
 def guncelle(id):
    #Gelen id değeri ile kaydı bulalım
-   yap=db.find({'_id':ObjectId(id)})
+   yap=db.find_one({'_id':ObjectId(id)})
    #Durum değeri True ise false, False ise True yap
    durum= not yap.get('durum')
    #Kaydı güncelle
